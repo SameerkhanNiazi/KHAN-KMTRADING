@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KM Trading - Investment Platform</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #f4f4f4; }
+    header, footer { background-color: #005288; color: white; padding: 20px; text-align: center; }
+    nav { background: #003d66; padding: 10px; text-align: center; }
+    nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+    nav a:hover { text-decoration: underline; }
+    section { padding: 20px; background: white; margin: 20px; border-radius: 8px; }
+    h2 { color: #005288; }
+    button { background: #005288; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 4px; }
+    button:hover { background: #003d66; }
+    input, textarea, select { width: 100%; padding: 10px; margin: 10px 0; border-radius: 4px; border: 1px solid #ccc; }
+    .plan { border: 1px solid #ccc; padding: 15px; border-radius: 6px; margin: 10px 0; }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>KM Trading</h1>
+  <p>Secure Investment with Daily Returns</p>
+</header>
+
+<nav>
+  <a href="#home">Home</a>
+  <a href="#plans">Investment Plans</a>
+  <a href="#apply">Apply Now</a>
+  <a href="#account">Account Details</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="home">
+  <h2>Welcome to KM Trading</h2>
+  <p>We offer secure investment opportunities with 20% daily returns for 30 days. Start growing your money today!</p>
+</section>
+
+<section id="plans">
+  <h2>Investment Plans</h2>
+  <div class="plan">
+    <p><strong>Plan A:</strong> Invest PKR 300</p>
+    <p>Daily Return: 20% for 30 days</p>
+    <button onclick="selectPlan('Plan A - 300 PKR')">Apply</button>
+  </div>
+  <div class="plan">
+    <p><strong>Plan B:</strong> Invest PKR 500</p>
+    <p>Daily Return: 20% for 30 days</p>
+    <button onclick="selectPlan('Plan B - 500 PKR')">Apply</button>
+  </div>
+  <div class="plan">
+    <p><strong>Plan C:</strong> Invest PKR 1000</p>
+    <p>Daily Return: 20% for 30 days</p>
+    <button onclick="selectPlan('Plan C - 1000 PKR')">Apply</button>
+  </div>
+  <div class="plan">
+    <p><strong>Plan D:</strong> Invest PKR 300000</p>
+    <p>Daily Return: 20% for 30 days</p>
+    <button onclick="selectPlan('Plan D - 300,000 PKR')">Apply</button>
+  </div>
+</section>
+
+<section id="apply">
+  <h2>Apply for an Investment Plan</h2>
+  <form id="applicationForm">
+    <label for="plan">Selected Plan:</label>
+    <input type="text" id="plan" name="plan" readonly required>
+
+    <label for="name">Your Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="cnic">CNIC (Last 4 Digits):</label>
+    <input type="text" id="cnic" name="cnic" maxlength="4" required>
+
+    <label for="proof">Upload Transaction Proof:</label>
+    <input type="file" id="proof" name="proof" required>
+
+    <button type="submit">Submit Application</button>
+  </form>
+</section>
+
+<section id="account">
+  <h2>Account Details</h2>
+  <p>Please send your investment to the following account:</p>
+  <ul>
+    <li><strong>Account Title:</strong> KM Trading</li>
+    <li><strong>Account Number:</strong> 1234-5678-9012-3456</li>
+    <li><strong>Bank:</strong> Meezan Bank</li>
+  </ul>
+  <p>After sending the payment, submit your transaction ID and proof in the application form above.</p>
+</section>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>WhatsApp: <strong>+923244034075</strong></p>
+  <p>Telegram: <strong>@KMTrading</strong></p>
+</section>
+
+<footer>
+  <p>&copy; 2025 KM Trading. All rights reserved.</p>
+</footer>
+
+<script>
+  function selectPlan(planName) {
+    document.getElementById('plan').value = planName;
+    window.location.href = "#apply";
+  }
+
+  document.getElementById("applicationForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    alert("Your application has been submitted. We will verify and activate your plan shortly.");
+    document.getElementById("applicationForm").reset();
+  });
+</script>
+
+</body>
+</html>
